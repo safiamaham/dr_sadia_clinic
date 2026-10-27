@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sadia Saif | Consultant Dental Surgeon - DHA Karachi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dental: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        accent: {
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-dental-800 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i class="fa-solid fa-location-dot text-dental-500 mr-2"></i> Badar Commercial, Phase V, DHA Karachi</span>
+                <span class="hidden md:flex items-center"><i class="fa-solid fa-clock text-dental-500 mr-2"></i> Open Daily (Closes 7:30 PM)</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:03232984858" class="hover:text-dental-100 transition"><i class="fa-solid fa-phone mr-1"></i> 0323 2984858</a>
+                <a href="https://wa.me/923002685875" target="_blank" class="hover:text-dental-100 transition"><i class="fa-brands fa-whatsapp mr-1 text-green-400"></i> +92 300 2685875</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 glass-header border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-dental-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-lg text-slate-900 leading-tight">Dr. Sadia Saif</span>
+                    <span class="block text-xs font-medium text-dental-600">Consultant Dental Surgeon</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-dental-600 transition">About Dr. Sadia</a>
+                <a href="#services" class="hover:text-dental-600 transition">Treatments</a>
+                <a href="#why-us" class="hover:text-dental-600 transition">Why Choose Us</a>
+                <a href="#testimonials" class="hover:text-dental-600 transition">Reviews (4.9★)</a>
+                <a href="#contact" class="hover:text-dental-600 transition">Contact</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden md:flex items-center space-x-3">
+                <button onclick="openBookingModal()" class="bg-dental-600 hover:bg-dental-700 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition shadow-sm hover:shadow flex items-center">
+                    <i class="fa-regular fa-calendar-check mr-2"></i> Book Appointment
+                </button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-dental-600 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">About Dr. Sadia</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Treatments</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Why Choose Us</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Reviews (4.9★)</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Contact</a>
+            <button onclick="toggleMobileMenu(); openBookingModal()" class="w-full mt-2 bg-dental-600 text-white py-3 rounded-xl font-medium text-center">
+                Book Appointment
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-16 lg:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dental-100 text-dental-800 text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-star text-amber-500"></i> Top-Rated Dental Clinic in DHA Karachi
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Your Smile Deserves <span class="text-transparent bg-clip-text bg-gradient-to-r from-dental-600 to-accent-600">Expert Care</span>
+                    </h1>
+                    
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Experience world-class, painless dentistry with <strong>Dr. Sadia Saif (BDS, D.Ortho)</strong>. With 16+ years of specialized experience in Dental Implants, Orthodontics, and Aesthetic Dentistry.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openBookingModal()" class="w-full sm:w-auto bg-dental-600 hover:bg-dental-700 text-white px-8 py-4 rounded-xl font-semibold text-base shadow-lg shadow-dental-600/30 hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-calendar-days mr-2"></i> Book Appointment Now
+                        </button>
+                        <a href="https://wa.me/923002685875" target="_blank" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 px-8 py-4 rounded-xl font-semibold text-base transition flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-xl mr-2"></i> WhatsApp Consultation
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">16+</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">4.9 ★</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">118+ Google Reviews</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900">100%</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Sterilized & Safe</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image / Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-white p-4 sm:p-6 rounded-3xl shadow-xl border border-slate-100 relative z-10">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+                             alt="Modern Dental Surgery Clinic" 
+                             class="rounded-2xl w-full h-80 object-cover mb-6"
+                             onerror="this.src='https://placehold.co/800x500/0d9488/ffffff?text=Dental+Clinic+Karachi'">
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-dental-600">Location</span>
+                                <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-medium">Open Now</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">Aesthetic & Dental Implantology Centre</h3>
+                            <p class="text-slate-500 text-sm flex items-start">
+                                <i class="fa-solid fa-location-dot text-slate-400 mt-1 mr-2 shrink-0"></i>
+                                Beside Delizia, C-33C Khayaban-e-Badar, Badar Commercial Area, Phase V DHA, Karachi
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Decorative background element -->
+                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-dental-500/10 rounded-full blur-3xl -z-0"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Dr. Sadia Saif -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" 
+                             alt="Dr. Sadia Saif Dental Surgeon" 
+                             class="rounded-3xl shadow-lg w-full h-[450px] object-cover"
+                             onerror="this.src='https://placehold.co/800x1000/0f766e/ffffff?text=Dr.+Sadia+Saif'">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-2 sm:right-6 bg-dental-900 text-white p-5 rounded-2xl shadow-xl max-w-xs">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-graduation-cap text-2xl text-dental-500"></i>
+                                <div>
+                                    <div class="text-sm font-bold">KMDC Graduate</div>
+                                    <div class="text-xs text-slate-300">BDS (2006) & D.Ortho Specialist</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-dental-600 font-semibold text-sm uppercase tracking-wider">Meet Your Surgeon</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">Dr. Sadia Saif</h2>
+                        <p class="text-dental-700 font-medium text-base mt-1">Consultant Dental Surgeon | Orthodontist & Implantologist</p>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Dr. Sadia Saif graduated from the prestigious <strong>Karachi Medical and Dental College (KMDC)</strong> in 2006. With over 16 years of dedicated clinical practice, she has established herself as one of DHA Karachi’s premier dental professionals.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Her clinical expertise encompasses advanced Orthodontics, Dental Implantology, Cosmetic Dentistry, Periodontics, and both Hard & Soft Tissue Management. She is renowned for her delicate, pain-free approach and commitment to custom treatment planning.
+                    </p>
+
+                    <!-- Qualifications grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-dental-600 text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Orthodontics & Aligners</h4>
+                                <p class="text-slate-500 text-xs">Braces, Clear Aligners, Bite Correction</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-dental-600 text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Dental Implantology</h4>
+                                <p class="text-slate-500 text-xs">Permanent Tooth Replacement Surgery</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-dental-600 text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Periodontics & Gum Care</h4>
+                                <p class="text-slate-500 text-xs">Gum Disease Treatment & Tissue Management</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-dental-600 text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Smile Design & Veneers</h4>
+                                <p class="text-slate-500 text-xs">Cosmetic Enhancements & Hollywood Smile</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-dental-600 font-semibold text-sm uppercase tracking-wider">Comprehensive Dental Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Specialized Dental Treatments</h2>
+                <p class="text-slate-600 mt-3 text-base">Providing gentle, state-of-the-art procedures tailored to your unique smile and oral health needs.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-screw-driver"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Dental Implants</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Permanent, natural-looking tooth replacements that restore full chewing function and facial aesthetics.</p>
+                    <button onclick="openBookingModal('Dental Implants')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-teeth-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Orthodontics & Aligners</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Straighten misaligned teeth using traditional braces or invisible clear aligners for all age groups.</p>
+                    <button onclick="openBookingModal('Orthodontics')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Teeth Whitening & Aesthetics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">In-clinic LED bleaching, stain removal, and smile makeovers for a brighter, confident smile.</p>
+                    <button onclick="openBookingModal('Teeth Whitening')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Periodontics & Gum Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Comprehensive gum scaling, deep cleaning, laser gum therapy, and soft tissue management.</p>
+                    <button onclick="openBookingModal('Gum Care')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Crowns, Bridges & Veneers</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Durable Zirconia/Porcelain crowns and custom porcelain veneers to restore damaged teeth seamlessly.</p>
+                    <button onclick="openBookingModal('Crowns & Veneers')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition group">
+                    <div class="w-12 h-12 rounded-xl bg-dental-100 text-dental-600 flex items-center justify-center text-xl mb-5 group-hover:bg-dental-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Family & Preventive Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Routine checkups, painless fillings, root canals, extractions, and oral hygiene instruction.</p>
+                    <button onclick="openBookingModal('General Dentistry')" class="text-dental-600 hover:text-dental-700 font-semibold text-sm inline-flex items-center">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs ml-2"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Clinic Features -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <span class="text-dental-600 font-semibold text-sm uppercase tracking-wider">The Standard of Dental Care</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Why Patients Trust Dr. Sadia Saif</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        We prioritize patient comfort, strict hygiene protocols, and transparent consultation. Located conveniently in Phase V DHA Karachi beside Delizia.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-pump-soap text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Strict Sterilization Protocol</h3>
+                                <p class="text-slate-600 text-sm">Autoclaved instruments and strict infection control for every single patient.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-dental-100 text-dental-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Painless Dental Techniques</h3>
+                                <p class="text-slate-600 text-sm">Gentle administration of local anesthesia and stress-free modern procedures.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-map-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Prime DHA Karachi Location</h3>
+                                <p class="text-slate-600 text-sm">Located on Khayaban-e-Badar with hassle-free parking and comfortable lounge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-900">Clinic Timings & Info</h3>
+                    
+                    <ul class="space-y-3 text-sm text-slate-600 border-b border-slate-200 pb-6">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium text-slate-900">Monday – Saturday</span>
+                            <span class="bg-dental-100 text-dental-800 px-3 py-1 rounded-full font-semibold">11:00 AM – 7:30 PM</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium text-slate-900">Sunday</span>
+                            <span class="text-slate-500 font-medium">By Prior Appointment</span>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Emergency Contact</div>
+                        <a href="tel:03232984858" class="text-xl font-bold text-dental-700 hover:text-dental-800 flex items-center">
+                            <i class="fa-solid fa-phone-volume mr-3"></i> 0323 2984858
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews / Patient Testimonials -->
+    <section id="testimonials" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <!-- Google Badge -->
+                <div class="inline-flex items-center space-x-2 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-sm mb-4">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                    <span class="text-sm font-semibold text-slate-800">4.9 Star Rating (118+ Google Reviews)</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">What Our Patients Say</h2>
+                <p class="text-slate-600 mt-2 text-base">Real experiences from patients treated at our Badar Commercial clinic.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic">"Dr. Sadia Saif is remarkably skilled! I got two dental implants done and the entire procedure was surprisingly smooth and painless. Highly recommended in DHA!"</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Tariq Mahmood</div>
+                            <div class="text-xs text-slate-400">Dental Implant Patient</div>
+                        </div>
+                        <i class="fa-brands fa-google text-slate-300"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic">"Extremely polite doctor and super hygienic clinic environment beside Delizia. She explained the aligner treatment step by step. Great orthodontic care."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Ayesha Khan</div>
+                            <div class="text-xs text-slate-400">Orthodontic Patient</div>
+                        </div>
+                        <i class="fa-brands fa-google text-slate-300"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic">"I went for teeth scaling and whitening before my wedding. The results were amazing! Dr. Sadia is super gentle and experienced."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Bilal Shah</div>
+                            <div class="text-xs text-slate-400">Teeth Whitening</div>
+                        </div>
+                        <i class="fa-brands fa-google text-slate-300"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-dental-600 font-semibold text-sm uppercase tracking-wider">Visit Us</span>
+                        <h2 class="text-3xl font-bold text-slate-900 mt-1">Get In Touch</h2>
+                        <p class="text-slate-600 mt-2 text-sm">Walk-ins and appointments are both welcome. Feel free to contact us on phone or WhatsApp.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-dental-100 text-dental-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Clinic Address</h4>
+                                <p class="text-slate-600 text-sm">Beside Delizia, C-33C Khayaban-e-Badar, Badar Commercial Area, Phase V DHA, Karachi, 75500</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-dental-100 text-dental-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Phone Numbers</h4>
+                                <p class="text-slate-600 text-sm">0323 2984858 / +92 300 2685875</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-dental-100 text-dental-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Working Hours</h4>
+                                <p class="text-slate-600 text-sm">Open Daily · Closes 7:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex items-center space-x-3">
+                        <a href="https://wa.me/923002685875" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl text-center text-sm transition">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:03232984858" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded-xl text-center text-sm transition">
+                            <i class="fa-solid fa-phone mr-2"></i> Call Clinic
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Placeholder Card -->
+                <div class="lg:col-span-7 bg-slate-100 rounded-3xl overflow-hidden min-h-[350px] relative border border-slate-200">
+                    <iframe 
+                        title="Clinic Map Location" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.57945030807!2d67.0620803!3d24.8098319!2m3!1f00!2f0d3f04!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33c5e886b6279%3A0xb249f7ba37a93a52!2sKhayaban-e-Badar%2C%20D.H.A.%20Phase%205%20Badar%20Commercial%20Area%20Defence%20V%20Defence%2C%20Karachi!5e0!3m2!1sen!2spk!4v1690000000000!5m2!1sen!2spk" 
+                        class="w-full h-full min-h-[380px] border-0" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-slate-800">
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-dental-600 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <span class="font-bold text-lg text-white">Dr. Sadia Saif</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm">
+                        Consultant Dental Surgeon specializing in Orthodontics, Dental Implants, and Aesthetic Dentistry in DHA Karachi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm uppercase text-slate-300 mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#about" class="hover:text-white transition">About Doctor</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Dental Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">Google Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Location Map</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm uppercase text-slate-300 mb-3">Contact Info</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Beside Delizia, Khayaban-e-Badar, DHA Phase V, Karachi.<br>
+                        Phone: 0323 2984858
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Dr. Sadia Saif - Aesthetic & Dental Implantology Centre. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com" target="_blank" class="hover:text-white"><i class="fa-brands fa-facebook text-base"></i></a>
+                    <a href="https://wa.me/923002685875" target="_blank" class="hover:text-white"><i class="fa-brands fa-whatsapp text-base"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Appointment Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <span class="text-dental-600 font-semibold text-xs uppercase tracking-wider">Book Consultation</span>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">Schedule Your Appointment</h3>
+                <p class="text-slate-500 text-xs mt-1">Dr. Sadia Saif Dental Clinic - Badar Commercial DHA</p>
+            </div>
+
+            <!-- Form -->
+            <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                    <input type="text" id="patientName" required placeholder="e.g. Sara Ahmed" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
+                        <input type="tel" id="patientPhone" required placeholder="0300 1234567" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Select Treatment</label>
+                        <select id="selectedService" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500">
+                            <option value="General Consultation">General Consultation</option>
+                            <option value="Dental Implants">Dental Implants</option>
+                            <option value="Orthodontics">Orthodontics & Aligners</option>
+                            <option value="Teeth Whitening">Teeth Whitening</option>
+                            <option value="Gum Care">Gum & Periodontal Care</option>
+                            <option value="Crowns & Veneers">Crowns & Veneers</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred Date</label>
+                        <input type="date" id="appointmentDate" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred Time Slot</label>
+                        <select id="appointmentTime" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500">
+                            <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                            <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                            <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                            <option value="06:00 PM - 07:30 PM">06:00 PM - 07:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Additional Notes (Optional)</label>
+                    <textarea id="patientNotes" rows="2" placeholder="Describe any dental pain or special requirements..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-dental-500"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-dental-600 hover:bg-dental-700 text-white font-semibold py-3.5 rounded-xl transition text-sm shadow-md mt-2">
+                    Confirm & Send Booking Request
+                </button>
+            </form>
+
+            <!-- Success Message Notification (hidden initially) -->
+            <div id="bookingSuccess" class="hidden text-center py-8 space-y-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900">Booking Request Received!</h4>
+                <p class="text-slate-600 text-sm">Thank you, <span id="confirmName" class="font-semibold"></span>. Our clinic staff will contact you shortly to confirm your time slot.</p>
+                <button onclick="closeBookingModal()" class="bg-slate-900 text-white px-6 py-2.5 rounded-xl font-medium text-sm">Close Window</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Set minimum date selector to today
+        document.getElementById('appointmentDate').min = new Date().toISOString().split("T")[0];
+
+        // Mobile drawer toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal triggers
+        function openBookingModal(serviceName = 'General Consultation') {
+            const modal = document.getElementById('bookingModal');
+            const select = document.getElementById('selectedService');
+            if (serviceName) select.value = serviceName;
+            
+            // Reset form view
+            document.getElementById('appointmentForm').classList.remove('hidden');
+            document.getElementById('bookingSuccess').classList.add('hidden');
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('patientName').value;
+            
+            // Display confirmation inside modal
+            document.getElementById('confirmName').textContent = name;
+            document.getElementById('appointmentForm').classList.add('hidden');
+            document.getElementById('bookingSuccess').classList.remove('hidden');
+            
+            // Clear form inputs
+            document.getElementById('appointmentForm').reset();
+        }
+    </script>
+</body>
+</html>
